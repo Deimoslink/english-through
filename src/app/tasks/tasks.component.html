@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Задания</h2>
+</div>
+
+<div class="navbar-background">
+  <div class="container" style="position: relative">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/new']">
+        <span>Новые</span><span class="badge">{{tasksCounter['new']}}</span>
+      </li>
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/active']">
+          <span>В работе</span><span class="badge badge-selected">{{tasksCounter['active']}}</span>
+      </li>
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/pending']">
+          <span>На рассмотрении</span><span class="badge">{{tasksCounter['pending']}}</span>
+      </li>
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/finished']">
+          <span>Выполнены</span><span class="badge">{{tasksCounter['finished']}}</span>
+      </li>
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/canceled']">
+          <span>Отменены</span><span class="badge">{{tasksCounter['canceled']}}</span>
+      </li>
+      <li routerLinkActive="active" class="table-nav-item" [routerLink]="['/tasks/drafts']">
+          <span>Черновики</span><span class="badge">{{tasksCounter['drafts']}}</span>
+      </li>
+    </ul>
+    <div class="add-item-button" [routerLink]="['/add']">+</div>
+  </div>
+
+</div>
+
+
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+</div>
+

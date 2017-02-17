@@ -1,0 +1,22 @@
+.flex-container {
+  display: flex;
+  min-height: 200px;
+  .flex-child {
+    min-height: 20px;
+    min-width: 20px;
+    padding:0;
+    margin:0;
+    background-color: #73e1b4;
+    border-color: #00cdcd;
+    text-align: center;
+    cursor: pointer;
+    &.selected {
+      animation: blink 1s infinite;
+    }
+  }
+}
+@keyframes blink {
+  0% {background-color: #73e1b4;}
+  50% {background-color: #00cdcd;}
+  100% {background-color: #73e1b4;}
+}

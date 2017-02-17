@@ -1,0 +1,38 @@
+<div class="navbar-background">
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-override navbar-brand" href="#">taskon</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active"><a class="navbar-override" [routerLink]="['/tasks']">Задания</a></li>
+          <li routerLinkActive="active"><a class="navbar-override" [routerLink]="['/finance']">Финансы</a></li>
+          <li routerLinkActive="active"><a class="navbar-override" [routerLink]="['/company']">Компания</a></li>
+          <li routerLinkActive="active"><a class="navbar-override" [routerLink]="['/statistics']">Статистика</a></li>
+        </ul>
+
+        <ul *ngIf="authenticated()" class="nav navbar-nav navbar-right">
+
+          <li><a href="#" class="navbar-override"><span>Баланс {{150000 | number:'.2-2' }}&nbsp;</span><i class="fa fa-rub" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="navbar-override notifications-item" (click)="toggleNotifications($event)">
+              <div *ngIf="thereAreNotifications" class="notifications-icon-spot"></div>
+              <img src="../assets/notifications-icon.svg" alt="">
+          </a></li>
+          <li class="dropdown">
+            <a href="#" (click)="toggleDropdown($event)" class="navbar-override dropdown-toggle"><span>Александр Линьков&nbsp;</span><span class="caret"></span></a>
+            <ul *ngIf="dropdownView" (mouseleave)="dropdownView = false" class="dropdown-menu-custom">
+              <li><a href="#" (click)="logout($event)">Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            </ul>
+          </li>
+          <li><a class="navbar-override" href="#"><img src="../assets/help-icon.svg" alt=""></a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+

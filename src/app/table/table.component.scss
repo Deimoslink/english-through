@@ -1,0 +1,30 @@
+@import "../../css/vars";
+
+.checkbox-wrapper{
+  padding-top: 8px;
+  & label{
+    margin-right: 20px;
+    color: $warm-grey;
+    &:hover{
+      color: $black;
+    }
+  }
+}
+.custom-form-control {
+  border-radius: 2px !important;
+  padding-right: 24px;
+}
+.custom-input-group-addon {
+  line-height: 34px;
+  vertical-align: middle;
+  z-index:10;
+  position: absolute;
+  right:10px;
+  color:#CCC;
+}
+.delete-button{
+  color: indianred;
+}
+a {
+  text-decoration: none !important;
+}
