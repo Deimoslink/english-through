@@ -2,8 +2,20 @@
   margin-top: 40px;
 }
 .form-group {
-  & input{
+  & div.input-group{
     margin-top: 10px;
-
   }
+}
+.has-error {
+  border: 1px solid #CC0000;
+  box-shadow:0 0 1px #CC0000;
+}
+.error-message{
+  color: #CC0000;
+}
+.input-group-btn {
+  padding:0;
+}
+a.selected{
+  font-weight: 700;
 }

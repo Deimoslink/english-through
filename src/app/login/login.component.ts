@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Http, Response } from "@angular/http";
+import {FormBuilder, Validators, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,14 +10,42 @@ import { Http, Response } from "@angular/http";
 })
 export class LoginComponent implements OnInit {
 
-  data: any = {login:{},signup:{}};
-  wantToSignUp: boolean = false;
+  public loginForm: FormGroup; //Declare a form
+  public signupForm: FormGroup;
+  public data: any = {login:{},signup:{}};
+  public wantToSignUp: boolean = false;
+  public showPassword: boolean = false;
+  public passwordVisibility: string = 'password';
 
-  constructor(private router:Router, private http:Http) { }
+  constructor(private router:Router,
+              private http:Http,
+              public fb: FormBuilder) {
 
-  toggleView(event) {
+    this.loginForm = fb.group({
+      'username': new FormControl({value: null, disabled: false},
+        Validators.required),
+      'password': new FormControl({value: null, disabled: false},
+        Validators.required),
+    });
+
+    this.signupForm = fb.group({
+      'username': new FormControl({value: null, disabled: false},
+        Validators.required),
+      'password': new FormControl({value: null, disabled: false},
+        Validators.required),
+    });
+
+
+  }
+
+  toggleView(event, status) {
     event.preventDefault();
-    this.wantToSignUp = !this.wantToSignUp;
+    this.wantToSignUp = status;
+  }
+
+  toggleShowPassword(){
+    this.showPassword = !this.showPassword;
+    this.passwordVisibility = this.passwordVisibility === 'password' ? 'text' : 'password';
   }
 
   checkUser() {

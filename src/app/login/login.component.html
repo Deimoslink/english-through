@@ -3,29 +3,93 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
 
-      <div style="text-align: center">
-        <a href="#" (click)="toggleView($event)">У меня нет аккаунта</a>
+      <div style="text-align: center; margin-bottom: 20px">
+        <a href="#"
+           (click)="toggleView($event, true)"
+           [ngClass]="{selected:wantToSignUp}">У меня нет аккаунта</a>
         |
-        <a href="#" (click)="toggleView($event)">У меня есть аккаунт</a>
+        <a href="#"
+           (click)="toggleView($event, false)"
+           [ngClass]="{selected:!wantToSignUp}">У меня есть аккаунт</a>
       </div>
 
-      <form *ngIf="!wantToSignUp" (ngSubmit)="checkUser()">
+      <form *ngIf="!wantToSignUp" [formGroup]="loginForm" (ngSubmit)="checkUser()">
         <div class="form-group">
-          <input required type="text" id="username" name="username" class="form-control" placeholder="Почта" [(ngModel)]="data.login.username">
-          <input required type="password" id="password" name="password" class="form-control" placeholder="Пароль" [(ngModel)]="data.login.password">
+          <input type="text"
+                 id="username"
+                 name="username"
+                 class="form-control"
+                 placeholder="Почта"
+                 [(ngModel)]="data.login.username"
+                 formControlName="username"
+                 [class.has-error]="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+          <span *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched"
+                class="error-message">Введите логин</span>
+          <div class="input-group">
+            <input type="{{passwordVisibility}}"
+                   id="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Пароль"
+                   [(ngModel)]="data.login.password"
+                   formControlName="password"
+                   [class.has-error]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+            <div class="input-group-btn">
+              <button class="btn btn-default"
+                      [class.has-error]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"
+                      type="button"
+                      (click)="toggleShowPassword()">
+                <i *ngIf="showPassword" class="fa fa-eye-slash" aria-hidden="true"></i>
+                <i *ngIf="!showPassword" class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <span *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"
+                class="error-message">Введите пароль</span>
         </div>
-      <button type="submit" class="btn btn-default" style="width: 100%">Войти</button>
+      <button type="submit" class="btn btn-default"
+              [ngClass]="{disabled:!loginForm.valid}"
+              [disabled]="!loginForm.valid"
+              style="width: 100%">Войти</button>
       </form>
 
-      <form *ngIf="wantToSignUp" (ngSubmit)="signUp()">
+      <form *ngIf="wantToSignUp" [formGroup]="signupForm" (ngSubmit)="signUp()">
         <div class="form-group">
-          <input required type="text" id="newUsername" name="username" class="form-control" placeholder="Почта" [(ngModel)]="data.signup.username">
-          <input required type="password" id="newPassword" name="password" class="form-control" placeholder="Пароль" [(ngModel)]="data.signup.password">
+          <input type="text"
+                 name="username"
+                 class="form-control"
+                 placeholder="Почта"
+                 [(ngModel)]="data.signup.username"
+                 formControlName="username"
+                 [class.has-error]="!signupForm.controls['username'].valid && signupForm.controls['username'].touched">
+          <span *ngIf="!signupForm.controls['username'].valid && signupForm.controls['username'].touched"
+                class="error-message">Введите логин</span>
+          <div class="input-group">
+            <input type="{{passwordVisibility}}"
+                   name="password"
+                   class="form-control"
+                   placeholder="Пароль"
+                   [(ngModel)]="data.signup.password"
+                   formControlName="password"
+                   [class.has-error]="!signupForm.controls['password'].valid && signupForm.controls['password'].touched">
+            <div class="input-group-btn">
+              <button class="btn btn-default"
+                      [class.has-error]="!signupForm.controls['password'].valid && signupForm.controls['password'].touched"
+                      type="button"
+                      (click)="toggleShowPassword()">
+                <i *ngIf="showPassword" class="fa fa-eye-slash" aria-hidden="true"></i>
+                <i *ngIf="!showPassword" class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <span *ngIf="!signupForm.controls['password'].valid && signupForm.controls['password'].touched"
+                class="error-message">Введите пароль</span>
         </div>
-      <button type="submit" class="btn btn-default" style="width: 100%">Зарегистрироваться</button>
+        <button type="submit" class="btn btn-default"
+                [ngClass]="{disabled:!signupForm.valid}"
+                [disabled]="!signupForm.valid"
+                style="width: 100%">Зарегистрироваться</button>
       </form>
-
-
 
 
     </div>
