@@ -1,9 +1,38 @@
 @import "../../css/vars";
 
-.container{
-  margin-top: 50px;
+.courseplate{
+  background-color: #fff;
+  padding:20px;
+  h2 {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 900;
+    color: $violet;
+    text-align: center;
+  }
 }
-
+.mainplate{
+  margin:auto;
+  max-width:560px;
+  text-align: center;
+  padding: 20px 0;
+  h2{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $orange;
+  }
+}
+.main-header{
+  text-align: center;
+}
+.col-md-4{
+  margin-bottom: 20px;
+}
+.hoverline{
+  background-color: $orange;
+  height: 5px;
+  width:100%;
+}
 @media (max-width: 768px) {
   .navbar-background{
     border-bottom: none;

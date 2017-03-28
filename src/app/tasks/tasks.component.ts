@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class TasksComponent implements OnInit {
 
+  public courseList:any = ['first','second','third', 'forth', 'fifth'];
+
   constructor() {
 
   }

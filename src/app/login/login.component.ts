@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Http, Response } from "@angular/http";
 import {FormBuilder, Validators, FormControl, FormGroup} from "@angular/forms";
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-login',
