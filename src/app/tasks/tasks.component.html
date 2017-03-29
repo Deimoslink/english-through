@@ -1,6 +1,4 @@
-
-
-<section class="container" style="background-color: #fff; width:100%; margin:40px 0; ">
+<section class="container mainplate-wrapper">
   <div class="mainplate">
     <h2>english thru</h2>
     <p>Эффективный способ узнать об английском языке больше, чем знают его носители. Обретите академические знания в области романо-германской филологии. Научитесь читать, слушать, писать и говорить на качественном английском.</p>
@@ -9,46 +7,45 @@
 
 <h2 class="main-header">Выберите блок, который вы намерены освоить.</h2>
 
-<section class="container" style="background-color: #ded7cc; margin-top:40px;">
+<section class="container">
 
-  <div class="row">
-    <div class="col-md-4">
-      <div class="courseplate">
-        <div class="hoverline"></div>
-        <h2>Headline</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aperiam architecto assumenda atque beatae dolor dolorem doloribus hic inventore, libero magnam nostrum quaerat qui quod repellat sint temporibus ullam!
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="courseplate">
-        <div class="hoverline"></div>
-        <h2>Headline</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aperiam architecto assumenda atque beatae dolor dolorem doloribus hic inventore, libero magnam nostrum quaerat qui quod repellat sint temporibus ullam!
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="courseplate">
-        <div class="hoverline"></div>
-        <h2>Headline</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aperiam architecto assumenda atque beatae dolor dolorem doloribus hic inventore, libero magnam nostrum quaerat qui quod repellat sint temporibus ullam!
-      </div>
-    </div>
-  </div>
-
-
-
-  <div *ngFor="let course of courseList; let i = index; trackBy: trackByFn;">
-    <div class="row">
+    <div class="row" *ngFor="let course of courseListChunks; let i = index; trackBy: trackByFn;">
       <div class="col-md-4">
+
         <div class="courseplate">
-          <div class="hoverline"></div>
-          <h2>{{course}}</h2>
+          <div class="hoverline-orange"></div>
+          <h2>{{course[0].Headline}}</h2>
+          <p>{{course[0].Content}}</p>
+          <img src="../public/pics/2.png" alt="">
+          <div class="progressbar-wrapper">
+            <div class="progressbar"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-4" *ngIf="course[1]">
+        <div class="courseplate">
+          <div class="hoverline-orange"></div>
+          <h2>{{course[1].Headline}}</h2>
+          <p>{{course[1].Content}}</p>
+          <div class="progressbar-wrapper">
+            <div class="progressbar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" *ngIf="course[2]">
+        <div class="courseplate">
+          <div class="hoverline-orange"></div>
+          <h2>{{course[2].Headline}}</h2>
+          <p>{{course[2].Content}}</p>
+          <div class="progressbar-wrapper">
+            <div class="progressbar"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--<router-outlet></router-outlet>-->
+  <router-outlet></router-outlet>
 
 </section>
 

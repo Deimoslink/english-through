@@ -1,8 +1,13 @@
 @import "../../css/vars";
 
 .courseplate{
+  cursor: pointer;
   background-color: #fff;
+  height:330px;
   padding:20px;
+  -webkit-box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
   h2 {
     text-transform: uppercase;
     font-size: 1em;
@@ -10,6 +15,32 @@
     color: $violet;
     text-align: center;
   }
+  .progressbar-wrapper{
+    position: absolute;
+    width:calc(100% - 70px);
+    bottom: 20px;
+    height: 5px;
+    .progressbar{
+      background-color: $violet;
+      height: 5px;
+      width:100%;
+    }
+  }
+  p{
+    text-align: center;
+    display: none;
+  }
+  img{
+    display:block;
+    margin:auto;
+  }
+}
+.mainplate-wrapper{
+  background-color: #fff; width:100%;
+  margin:40px 0;
+  -webkit-box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 50px -5px rgba(0,0,0,0.5);
 }
 .mainplate{
   margin:auto;
@@ -25,10 +56,21 @@
 .main-header{
   text-align: center;
 }
-.col-md-4{
-  margin-bottom: 20px;
+section{
+  .row{
+    .col-md-4{
+      margin-bottom: 30px;
+    }
+  }
+  .row:last-of-type{
+    margin-bottom: 50px;
+  }
+  .row:first-of-type{
+    margin-top: 50px;
+  }
 }
-.hoverline{
+
+.hoverline-orange{
   background-color: $orange;
   height: 5px;
   width:100%;
