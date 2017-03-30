@@ -66,7 +66,29 @@
 }
 body {
   background-color: $beige;
+  min-width: 250px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
+/*CUSTOM SCROLLBARS*/
+body::-webkit-scrollbar {
+  width:5px;
+  height:5px;
+}
+body::-webkit-scrollbar-thumb{
+  border-width:1px 1px 1px 2px;
+  border-color: #777;
+  background-color: #aaa;
+}
+body::-webkit-scrollbar-track-piece{
+  background-color: red;
+}
+
+
 input:focus, button:focus {
     outline:none !important;
     border: 1px solid #432a4a !important;
