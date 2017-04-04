@@ -13,41 +13,45 @@
       <div class="col-md-4">
 
         <div class="courseplate">
-          <div class="hoverline-orange"></div>
-          <h2>{{course[0].Headline}}</h2>
-          <p>{{course[0].Content}}</p>
-          <img [src]="course[0].ImageURL" alt="">
-          <div class="progressbar-wrapper">
-            <div class="progressbar"></div>
-          </div>
+          <a href="http://localhost:4200/company">
+            <div class="hoverline-orange"></div>
+            <h2>{{course[0].Headline}}</h2>
+            <p>{{course[0].Content}}</p>
+            <img [src]="course[0].ImageURL" alt="">
+            <div class="progressbar-wrapper">
+              <div class="progressbar"></div>
+            </div>
+          </a>
         </div>
 
       </div>
       <div class="col-md-4" *ngIf="course[1]">
         <div class="courseplate">
-          <div class="hoverline-orange"></div>
-          <h2>{{course[1].Headline}}</h2>
-          <p>{{course[1].Content}}</p>
-          <img [src]="course[1].ImageURL" alt="">
-          <div class="progressbar-wrapper">
-            <div class="progressbar"></div>
-          </div>
+          <a href="http://localhost:4200/company">
+            <div class="hoverline-orange"></div>
+            <h2>{{course[1].Headline}}</h2>
+            <p>{{course[1].Content}}</p>
+            <img [src]="course[1].ImageURL" alt="">
+            <div class="progressbar-wrapper">
+              <div class="progressbar"></div>
+            </div>
+          </a>
         </div>
       </div>
       <div class="col-md-4" *ngIf="course[2]">
         <div class="courseplate">
-          <div class="hoverline-orange"></div>
-          <h2>{{course[2].Headline}}</h2>
-          <p>{{course[2].Content}}</p>
-          <img [src]="course[2].ImageURL" alt="">
-          <div class="progressbar-wrapper">
-            <div class="progressbar"></div>
-          </div>
+          <a href="http://localhost:4200/company">
+            <div class="hoverline-orange"></div>
+            <h2>{{course[2].Headline}}</h2>
+            <p>{{course[2].Content}}</p>
+            <img [src]="course[2].ImageURL" alt="">
+            <div class="progressbar-wrapper">
+              <div class="progressbar"></div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-
-  <router-outlet></router-outlet>
 
 </section>
 

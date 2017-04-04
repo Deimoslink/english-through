@@ -1,3 +1,28 @@
-<div class="container">
-  <h2>Компания</h2>
-</div>
+<section class="container course-header">
+  <h2>Существительное и Числительное</h2>
+  <p>Сделайте первый шаг и узнайте всё о самых важных словах — о существительных. Род, число, падеж… Чем числительные в английском отличаются от числительных в русском.</p>
+  <button type="button">продолжить</button>
+</section>
+
+<section class="container course-list">
+  <div *ngFor="let course of courses; let i = index; trackBy: trackByFn;" class="row">
+    <div class="col-md-8 col-md-offset-2 block">
+      <a href="http://localhost:4200/finance">
+        <div class="prog">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="content-wrapper" style="display:flex">
+          <div class="img-wrapper" style="min-width: 70px">
+            <img src="../public/pics/hexa.jpg" alt="">
+          </div>
+          <div style="padding: 0 10px">
+            <h2>Singular and Plural</h2>
+            <p>Научитесь правильно использовать единственное и множественное число существительных.dfghdfghdfg dfgh dfg dfg dfg dfgh dfghdf gdhfg dfgh fghfdgh dfghdfg dfdghd fghfg dfhd dgh</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
