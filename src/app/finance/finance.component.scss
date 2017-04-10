@@ -1,237 +1,73 @@
+@import "../../css/vars";
+
 .flex-container{
   display: flex;
-  min-height: 500px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 50px);
   align-items: stretch;
   align-content:stretch;
 }
+.flex-1, .flex-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
 .flex-1{
-  background-color: #ea5d08;
-  flex-grow:1;
+  min-width: 400px;
+  background-color: #fff;
+  flex-grow: 1;
+  flex-shrink: 4;
+  .upperline, .lowerline {
+    background-color: $violet;
+  }
 }
 .flex-2 {
-  background-color: #6b467f;
-  flex-grow:2;
+  background-color: $beige;
+  flex-grow: 2;
+  .upperline, .lowerline {
+    background-color: $light-violet;
+  }
+}
+.theory-content, .activities-content{
+  //background-color: aquamarine;
+  min-height: calc(100vh - 122px);
+  overflow: hidden;
+
+}
+.content{
+  margin:20px;
+  padding-right:10px;
+  max-height: calc(100vh - 162px);
+  overflow-y: scroll;
+}
+
+.upperline, .lowerline {
+  height: 36px;
+  color: #fff;
+  text-align: left;
+  padding:5px;
+  padding-left: 20px;
+  h3 {
+    margin:0;
+  }
 }
 @media (max-width: 992px) {
   .flex-container{
-    height: calc(200vh - 100px);
+    height: calc(200vh - 50px);
     flex-direction: column;
-    align-items: stretch;
-    align-content:stretch;
+  }
+  .flex-1{
+    min-width: unset;
+    height: calc(100vh - 50px);
   }
   .flex-2{
-    background-color: #ea5d08;
     flex-grow:1;
+    height: calc(100vh);
   }
-  .flex-1 {
-    background-color: #6b467f;
-    flex-grow:1;
+  .activities-content{
+    min-height: calc(100vh - 72px);
+    .content{
+      max-height: calc(100vh - 112px);
+    }
   }
 }
-
-
-//
-//.theory {
-//  padding: 0;
-//}
-//
-//.progress-bar-wrapper {
-//  height:5px;
-//  width:100%;
-//  margin-bottom:5px;
-//  margin-top:-5px;
-//  padding-right: 10px;
-//}
-//
-//.theory-line {
-//  height: 36px;
-//  background-color: #33183b;
-//  color: #fff;
-//  text-align: left;
-//  padding:5px;
-//  padding-left: 20px;
-//}
-//
-//.theory-content-wrapper {
-//  width: 100%;
-//  background-color: #fff;
-//  padding: 20px;
-//  padding-right: 10px;
-//  height: calc(100vh - 164px);
-//}
-//
-//.theory-content {
-//  padding-right: 5px;
-//  height: 100%;
-//  overflow: auto;
-//}
-//
-//.theory-bottom {
-//  width: 100%;
-//  height: 42px;
-//  background-color: #fff;
-//  margin-left: 20px;
-//}
-//
-//.activities {
-//  padding: 0;
-//}
-//
-//.activities-line {
-//  height: 36px;
-//  background-color: #6b467f;
-//  color: #fff;
-//  text-align: left;
-//  padding:5px;
-//  padding-left:20px;
-//}
-//
-//.activities-content-wrapper {
-//  width: 100%;
-//  background-color: #ded7cc;
-//  overflow: auto;
-//  padding: 30px 20px 10px 20px;
-//  height: calc(100vh - 164px);
-//}
-//
-//.activities-task {
-//  height:20px;
-//}
-//
-//.activities-task h4 {
-//  margin:0;
-//}
-//
-//.activities-variants {
-//  padding-top: 10px;
-//  height: calc(100vh - 304px);
-//  text-align: center;
-//}
-//
-//.activities-dropzone {
-//  text-align: center;
-//}
-//
-//.activities-dropzone div {
-//  height: 80px;
-//  font-size: 16px;
-//  overflow: hidden;
-//  border-right: 1px solid #33183b;
-//  border-left: 1px solid #33183b;
-//}
-//
-//.activities-dropzone div:first-child {
-//  border-left: 0px;
-//}
-//
-//.activities-dropzone div:last-child {
-//  border-right: 0px;
-//}
-//
-//.activities-bottom {
-//  width: 100%;
-//  height: 42px;
-//  background-color: #ded7cc;
-//  margin-right: 20px;
-//}
-//
-//.right {
-//  position: absolute;
-//  right: 20px;
-//}
-//
-//.left {
-//  position: absolute;
-//  right: 60px;
-//}
-//
-//.et-button {
-//  width: 90px;
-//  height: 32px;
-//}
-//
-//#subm {
-//  border: #ea5d08 solid 1px;
-//  color: #ea5d08;
-//}
-//
-//#subm:hover {
-//  color: #fff;
-//  background-color: #ea5d08;
-//}
-//
-//#subm:focus {
-//  outline: none;
-//}
-//
-//.ending {
-//  border: 1px solid black;
-//  color: #ea5d08;
-//  padding-left: 1px;
-//  margin-left: 1px;
-//  padding-right: 1px;
-//  margin-right: 1px;
-//}
-//
-//.dnd {
-//  display: inline-block;
-//  background-color: #fff;
-//  padding: 5px 10px 5px 10px;
-//  margin: 5px;
-//  /*border: #33183b solid 1px;*/
-//  color: #33183b;
-//  /*border-radius: 10%;*/
-//  text-align: center;
-//}
-//
-//.word {
-//  display: inline-block;
-//  background-color: #fff;
-//  padding: 5px 10px 5px 10px;
-//  /*border: #33183b solid 1px;*/
-//  color: #33183b;
-//  /*border-radius: 10%;*/
-//  text-align: center;
-//  border-left: solid 5px #6b467f;
-//}
-//
-//.selected {
-//  background-color: #6b467f;
-//  color: #fff;
-//}
-//
-//.input-wrapper {
-//  padding:0;
-//  padding-right:20px;
-//  border-left: solid 5px #6b467f;
-//}
-//
-//.input-wrapper span {
-//  display: inline-block;
-//  background-color: #fff;
-//  padding: 5px 10px 5px 10px;
-//  color: #33183b;
-//  text-align: center;
-//}
-//
-//.input-wrapper input {
-//  float: right;
-//}
-//
-//input {
-//  width:100px;
-//  height:30px;
-//  padding:10px
-//}
-//
-//input:focus {
-//  outline:none;
-//  border: 1px solid #432a4a;
-//  box-shadow:0 0 1px #432a4a;
-//}
-//
-//.activities-variants div {
-//  margin-top:15px;
-//  text-align: left;
-//}
