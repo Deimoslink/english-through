@@ -91,7 +91,15 @@ body {
   height:20px !important;
   border-radius: 10px;
 }
-
+body{
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-3dlight-color: #C0C0C0;
+  scrollbar-highlight-color: #C0C0C0;
+  scrollbar-track-color: #EBEBEB;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: #C0C0C0;
+  scrollbar-dark-shadow-color: #C0C0C0;
+}
 /*ANCHORS UNDERLINE AND COLOR RESET*/
 a, a:hover{
   text-decoration: none;
